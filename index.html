@@ -1,336 +1,159 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   
-   <meta name="title" content="KeyAuth - Open Source Auth">
+<?php
+include 'keyauth.php';
+include 'credentials.php';
 
-   <!-- Canonical SEO -->
-   <link rel="canonical" href="https://keyauth.cc" />
-
-   <meta
-       content="Secure your software against piracy, an issue causing $422 million in losses annually - Fair pricing & Features not seen in competitors"
-       name="description" />
-   <meta content="KeyAuth" name="author" />
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <meta name="keywords"
-       content="KeyAuth, Cloud Authentication, Key Authentication,Authentication, API authentication,Security, Encryption authentication, Authenticated encryption, Cybersecurity, Developer, SaaS, Software Licensing, Licensing" />
-   <meta property=”og:description”
-       content="Secure your software against piracy, an issue causing $422 million in losses annually - Fair pricing & Features not seen in competitors" />
-   <meta property="og:image" content="https://cdn.keyauth.cc/front/assets/img/favicon.png" />
-   <meta property=”og:site_name” content="KeyAuth | Secure your software from piracy." />
-
-   <!-- Schema.org markup for Google+ -->
-   <meta itemprop="name" content="KeyAuth - Open Source Auth">
-   <meta itemprop="description"
-       content="Secure your software against piracy, an issue causing $422 million in losses annually - Fair pricing & Features not seen in competitors">
-
-   <meta itemprop="image" content="https://cdn.keyauth.cc/front/assets/img/favicon.png">
-
-   <!-- Twitter Card data -->
-   <meta name="twitter:card" content="product">
-   <meta name="twitter:site" content="@keyauth">
-   <meta name="twitter:title" content="KeyAuth - Open Source Auth">
-
-   <meta name="twitter:description"
-       content="Secure your software against piracy, an issue causing $422 million in losses annually - Fair pricing & Features not seen in competitors">
-   <meta name="twitter:creator" content="@keyauth">
-   <meta name="twitter:image" content="https://cdn.keyauth.cc/front/assets/img/favicon.png">
-
-
-   <!-- Open Graph data -->
-   <meta property="og:title" content="KeyAuth - Open Source Auth" />
-   <meta property="og:type" content="website" />
-   <meta property="og:url" content="./" />
-   
-   <title>Fortnite Fajita</title>
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-   <script src="https://code.jquery.com/jquery-3.6.3.min.js"
-      integrity="sha384-Ft/vb48LwsAEtgltj7o+6vtS2esTU9PCpDqcXs4OCVQFZu5BqprHtUCZ4kjK+bpE" crossorigin="anonymous">
-   </script>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-	  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-   </script>
-   <link rel="stylesheet" href="https://cdn.keyauth.cc/v2/keyauth.css">
-   <link rel="shortcut icon" type="image/jpg" href="https://cdn.keyauth.cc/front/assets/img/favicon.png">
-   <script type="text/javascript" src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.sync.bootstrap.min.js" async></script>
-</head>
-   </div>
-   <nav class="navbar navbar-expand-lg navbar-dark mt-3">
-      <div class="container">
-         <a class="navbar-brand">
-            <img
-               src="https://lh3.googleusercontent.com/fife/APg5EOZ-BIFOwbNc8r0G3Ed7bPbJB-YKn9h4v5Rul1MdhmaAa_uM1uUCj7f2TyuB5Vorn--1KT4MroClzceamgUr1A7ZN8yjFmVory4JJglhG-yx--wZ_tVbKHhI1Mmk4gjlgSOifEVY27HC9HcWN0x8f8u5Kh5H9J_Zde9ZAZCnGxGtOIZ8FhlEqrqKlq01yhZ9Y48GxPkhVwM46SHwYDpYixYqW9vfmEKImijP80o2OtsY8sr8BqRx50Yl4hdIz0IKbzJVwkCYi5ho_udOgEH0CvHrGePD0JJqO9ZuDFxKLlnuixOFeXducPPV63Vx0Zn42i6rhRn2Z8vyx20bgnFfRM3gVa_oQEaCljnFzALAIRhaAPRr_ngoyF_r-2OPtBWIpVej8IdpSfJCYnTUx2Rpk4rAMysz6cV44rhjdt19T8Wi1JeTHpvzfrUtM--DxIpeqpvzQetlwejhZbWiUYMDwVq80qcbLKC4erTTjl7YiSaf2pMDFoW4WenfWA-mfr3zSd2pA0fg4J15VZhAOIjRJb1THsvuNNXLqLCO_PBHjhRIoBHvu0yNl0PtjB3FSNPZrburDWjb8UxyTmi_dS_Qrbbzjl1h0p7Dk_9NQ8pp5j21aDywkes-m2H1na1MKZAs7uySPmTWRu7uZsyBfrTiZ6XwmLkJdQXK_fpQcJlCO0LpEjGMD4orfTl3yft81uBpOPpGQlWzf3dO0MV4yT1MkrY0oIMcqU3gXDRjW5jCd7HcSU3AN_eDtmOxzX6C3Z9egknNdr9q9G_Br7rErb79A4Vg0kE6FxPuDZAqwB5I9_jJlnNjZoiVmzUqAOVHwnUrPSJ_qgdQsq3XN6uETBvH2j0URDJh0MmTeB9kHg80rcSySnrMgC-2gVxV0tP9klG2jj4ksZPps0uMoQOWxI_ujL3KKScK45B2iKmMgu3xIO5kEJOlxheX1AaVtXhYdfw7B3NWnQ3P7uLz0DKFLRU2oVz7qc8wMYncRhYj38NkceA0dKQm_nnwpqP8L2HyuwsMss92FKUgJbm2fwcJdJGHucCzkHkuGVn8J_RMmllXmtX_Y8EzeT49SAThLdgIaKRmG0hmk1JPfmWK79C4n896n_LwhHQLuXO4-4SaDALlbnzq4ud2YcVH7NE-WTtWvJm0kiIdRiOImv5F51uaihFxNY2-h2omCKi72zH1tVwjWUyP8FXGBhLzAzmWWZvh7pkcqVEn5bcIAAYPR6tnt3ODagNHo05B6qIQLthTEEMV4HDh0vYysIxQnz58bzfc2IMeDcmZhknRNZIzFnLf0QQ6Rp4FsSl7cjAa9Gz6DXmnulG_82LFFISdCPywh6Fpo60pFpZv3GQ0e30zqeHVgAN3T965fnMsSQ1d0YdY9Z5uyK6nIU-cDFlU6B2w6BzzjUaVRSDVlELKAbm2SJV4LBjBGMpOV16l7vGS38MoOo4bIpA-6BtEjWzd-gfYFQ3BDPAYwixPnCDVr6HHS4qid9F8tp9GWXyz=w1318-h665"
-               width="200" height="150" class="" alt="">
-         </a>
-         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-         </button>
-         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-lg-0">
-               <li class="nav-item">
-                  <a class="nav-link" href="#features">Features</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="https://headwayapp.co/keyauth-changelog" target="_blank">Changelog</a>
-               </li>
-               <div class="dropdown show">
-                  <a class="nav-link dropdown-toggle" href="https://discord.gg/keyauth" target="_blank" id="dropdownMenuLink" data-toggle="dropdown"
-                     aria-haspopup="true" aria-expanded="false">
-                     Support
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                     <a class="dropdown-item" href="https://docs.keyauth.cc" target="_blank">Docs</a>
-                     <a class="dropdown-item" href="https://discord.gg/keyauth" target="_blank">Discord</a>
-                  </div>
-               </div>
-            </ul>
-            <a href="./login/"><button class="btn btn-login text-light"><i class="fad fa-sign-in-alt"></i> Login</button></a>
-         </div>
-      </div>
-   </nav>
-   <div class="container">
-      <section class="top-section">
-         <div class="row align-items-center">
-            <div class="col-sm-6" id="text-animate">
-               <span class="first-descreption"></span>
-               <h1 class="fw-bolder mt-1">
-                  <br>
-               </h1>
-               <p class="seconed-descreption mt-3">
-                  Simply, Fortnite Fajita.
-               </p>
-               <a href="https://forms.gle/WozXGRA1vuEXdi728"><button class="btn btn-invite my-1"><i class="fas fa-paper-plane mr-2"></i>
-                     Request a Login</button></a>
-               &nbsp;
-               <a href="./login/"><button class="btn btn-dashboard my-1 animate-up-2"><i class="fal fa-sign-in"></i>
-                     &nbsp;Login</button></a>
-            </div>
-            <div class="col-sm-6" id="image-animate">
-               <img class="rounded-3 img-perspective-main" width="120%"
-                  src="https://cdn.cloudflare.steamstatic.com/steam/apps/1600810/capsule_616x353.jpg?t=1666993095">
-            </div>
-         </div>
-      </section>
-   </div>
-   <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1440 320">
-      <path fill="#0f1624" fill-opacity="1"
-         d="M0,64L120,90.7C240,117,480,171,720,170.7C960,171,1200,117,1320,90.7L1440,64L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z">
-      </path>
-   </svg>
-   <section id="features" class="features-sections">
-      <div class="container">
-         <div class="features-typograpghy">
-            <p class="text-center features-title-tag">Why KeyAuth?</p>
-            <h4 class="text-center features-main-title">
-               What makes Fortnite Fajita different from other game services?
-            </h4>
-            <h6 class="text-center mt-4">
-               <p class="tag-features d-inline-block" data-toggle="tooltip" data-html="true"
-                  title="All requests sent to and from the server are AES-256 Encrypted and then Hex encoded" id="fet2">
-                  Unblocked</p>
-               <p class="tag-features d-inline-block" data-toggle="tooltip" data-html="true"
-                  title="API endpoint exclusive to customers with the Seller role, access to all KeyAuth resources outbound"
-                  id="fet3">Game Request</p>
-               <p class="tag-features d-inline-block" data-toggle="tooltip" data-html="true"
-                  title="Enable the Hardware Lock to require the server to check if HWID matches" id="fet4">
-                  Login System</p>
-               <p class="tag-features d-inline-block" data-toggle="tooltip" data-html="true"
-                  title="Upload files securely on the server-side, only allowing users to download after authentication"
-                  id="fet5">Server-sided Files</p>
-               <p class="tag-features d-inline-block" data-toggle="tooltip" data-html="true"
-                  title="Protect your API link(s) by having KeyAuth send requests on the server-side." id="fet6">
-                  Unblockers</p>
-               <p class="tag-features d-inline-block" data-toggle="tooltip" data-html="true"
-                  title="Blacklist your client's hardware info such as Windows SID and IP address" id="fet7">Fast and Reliable</p>
-            </h6>
-            <br>
-         </div>
-         <div class="featureOne" style="margin-top: 2%;">
-            <div class="row mt-3">
-               <div class="col-md-6 my-1 mt-5 feature-typo">
-                  <span class="statics-info-tag"><i class="fal fa-key"></i></span>
-                  <h4 class="text-light feature-title mt-4 fw-bold">Games Unblocked</h4>
-                  <p class="feature-descreption mt-1 w-75">Fortnite Fajita provides many unblocked games and services, and does not share any data with 3rd parties</p>
-                  <p class="seacondery-info">
-                     <div class="row mt-4">
-                        <p class="fw-bold">Play Unblocked games with no interruptions</p>
-                     </div>
-               </div>
-               <div class="col-md-6 my-1">
-                  <center>
-                     <img id="box" src="https://lh3.googleusercontent.com/fife/APg5EOYUNBJteRHNfrY1CjotpMku28VRcLFklrJldBu-S4cWiQyjQSSwqMmRC2CvPtdI2ZYsZQtCjFsjU1Yo4SE4AsWfYly7w9urfGy7_4J1TCuDz3h1C97ZInq5eSKy2uqO0JepezIXWfSItTvN2hCfhdYoKoFxnBU0dH3mDkoNX4nVrf9ohQvEN5F-5SXz_XctWBX6jUk4MHqBmtOo4ptHPPnPaf-wmXaCLMLSQ2s_79S2WA2u9wbZZLAV2pdOoxRwHFcouchcdMkK_jo7HrifOEUmCLQ109juOepqBY57OM4aFfoTDAgTEgyMyX8Uz--mNtWR1m_L4-EyD0vjY1vb134k2zTV01bAOJjLCHH1bdrVblm6UzqE6RWuuuGMjUTGuX1U4DIsq2-YuAy4tiqAPZRnDRNaTp6tuVG-S7q3lPpvy9Y6L7o3EibB8U7H7EvAnXPqEnK8foY2t-G6wls1Soo5IxlM9W3-jAk4LtlLZwHnd9JJebKrgQZBiVjA6XkGJlajkYi5-ml6LeRHXrRzNvgXVw3dIZ72ooFv25gXj8MbzNxpzvYrqAmTbh_AM8X41_VKY62alrIRU7ZBK1npDEOgp-Pa6z2c43gLh0Rk0BknMVs6n6bKrxD5J6R2MFbNWGNNFNNccPPT8ajsRd-XNSrjDoFIf_KhSvEXhtJ79JTgvjR4bVw-FA-HPoSd2nPWRTZkG74DrkNw8mWX1MTLIuBl8oxBhLW6fvl1R83Gr49rtcX0OBRNP9WcwqdyKW2nRl82t1EzRgMRvh5ej0xN2LJ9BSm5hv2tIFcwjhMictf4xvxc93IRx5MhsQWndfW-zaoW1W-V0ioKIVOCYwIPFMwa3BsmC-zDN0xO3H1kGXdT5eVSoVDr7k2bvsVSI8LNK9cMhaDRCAVo9IeMAzJT5BA9D-DT5U9T4yvFGwXzqNP_jxUtUj1jTynDDJTBWqDAqUit0VR2bkg8GOT5U19IWXsO-aKo6OzSNAzv-ib5Aj2GEd12ha_0rnMqTq1m_Wnsu2wqMP6DZ-0p8uKWRTb4Lt8CScpe7AqjPAT52HE_ijG7DjbTcnU5g1OZ_gvmTkd71jGJHGuTMxMI_1G1ipQXmjGsN7YpNjHveX7vXcTJDde1bEkIY5qSbEzFOSkKCVkjSrh5mEEH46SqDmRntbf1lzzsF3ccnRjRtGWe17hEYtI6LNm59VhLMREvOcvlEfF6VTtJcdLVGQl3pfmuA46jx2s82HgnSHpemOFaFSRPzzmtAh7gDdHfK9H62tgGp-5u39J_2zaF9TQ6R8tqRSXhwFfIJvPRe4kWFpqHhHYKGnBnu4GdcMufOP_zuBJQk7XwCVwtNBtoK6HguD8XBSFCPdYr9H3iUF4v_XLB59SD-gooPR46bSUi-MJr_I09OGbLmLznZ9u1IQnJb_UuBcWCmxwCKCXc_RAvPAniuvQoZ9FDJCd6fZ-x6uBwJN_Jy35VPiX8yU8rd9b0N-6utpQ1pPmALucJ=w1318-h665"
-                        class="img-fluid img-perspective-reverse" width="600px" height="600px">
-                  </center>
-               </div>
-            </div>
-         </div>
-         <div class="featureOne">
-            <div class="row mt-3">
-               <div class="col-md-6 my-1">
-                  <center>
-                     <img id="box" src="https://geometrydash.io/data/image/game/subway-surfers.png"
-                        class="img-fluid img-perspective" width="600px" height="600px">
-                  </center>
-               </div>
-               <div class="col-sm-6 my-1 mt-5 feature-typo" style="left: 0rem;">
-                  <span class="statics-info-tag tag-fix"><i class="fal fa-star-shooting"></i></span>
-                  <h4 class="text-light feature-title mt-4 fw-bold">No Adverts</h4>
-                  <p class="feature-descreption mt-1 w-75">Experience games like never before with 0 interruptions!
-                  </p>
-                  <p class="seacondery-info"></p>
-               </div>
-            </div>
-         </div>
-         <div class="featureOne">
-            <div class="row mt-3">
-               <div class="col-sm-6 my-1 mt-5 feature-typo" style="left: 0rem;">
-                  <h4 class="text-light feature-title mt-4 fw-bold">Open-Sourced</h4>
-                  <p class="feature-descreption mt-1 w-75">Fortnite Fajita provides full open source to its customers to ensure privacy to all. </p>
-                  <p class="seacondery-info"></p>
-                  <a href="https://github.com/EmorWhy" target="_blank" class="btn btn-primary animate-up-2 mb-3"><i
-                        class="fab fa-github mr-2"></i> GitHub</a>
-               </div>
-            </div>
-         </div>
-      </div>
-      <br>
-      <br>
-      <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1440 320">
-         <path fill="#131c2c" fill-opacity="1"
-            d="M0,64L120,90.7C240,117,480,171,720,170.7C960,171,1200,117,1320,90.7L1440,64L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z">
-         </path>
-      </svg>
-      <section class="statics-section">
-         <div class="container stats-section-two">
-            <p class="text-center features-title-tag">#</p>
-            <h4 class="text-center features-main-title">Numbers Don't Lie</h4>
-            <center>
-                <div class="card w-75 mt-4 p-2">
-                  <div class="row">
-                     <div class="col-md-6 my-3">
-                        <i class="fal fa-users statc-icon"></i>
-                        <h3 class="d-block mt-3 count-num fw-bold" id="accs"></h3>
-                        <span class="stats-desc">Accounts</span>
-                     </div>
-                     <div class="col-md-6 my-3">
-                        <i class="fal fa-solid fa-browser statc-icon"></i>
-                        <h3 class="d-block mt-3 count-num fw-bold" id="apps"></h3>
-                        <span class="stats-desc">Games</span>
-                     </div>
-                     <div class="col-md-6 my-3">
-                        <i class="fal fa-key statc-icon"></i>
-                        <h3 class="d-block mt-3 count-num fw-bold" id="licenses"></h3>
-                        <span class="stats-desc">Keys</span>
-                     </div>
-                     <div class="col-md-6 my-3">
-                        <i class="fal fa-chart-line statc-icon"></i>
-                        <h3 class="d-block mt-3 count-num fw-bold" id="activeUsers"></h3>
-                        <span class="stats-desc">Unblocked</span>
-                     </div>
-                  </div>
-				  <i></i>
-               </div>
-               </div>
-            </center>
-         </div>
-         <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1440 320">
-            <path fill="#0f1624" fill-opacity="1"
-               d="M0,64L120,90.7C240,117,480,171,720,170.7C960,171,1200,117,1320,90.7L1440,64L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z">
-            </path>
-         </svg>
-      </section>
-         <br>
-         <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1440 30">
-            <path fill="#0f1624" fill-opacity="1"
-               d="M0,64L120,90.7C240,117,480,171,720,170.7C960,171,1200,117,1320,90.7L1440,64L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z">
-            </path>
-         </svg>
-      </section>
-      <div class="container">
-         <div class="getstarted-box p-5">
-            <h2 class="text-center fw-bold get-title">Join our Discord</h2>
-            <p class="text-center get-desc">Need help with setting up our examples, or maybe you just want to chat with
-               our community. Join our discord!
-            </p>
-            <center>
-               <a href="https://discord.gg/keyauth" target="_blank"><button class="btn btn-get-started text-center">Join now!</button></a>
-            </center>
-         </div>
-      </div>
-      <br>
-      <br>
-      <footer style="margin-top: 8%;" class="p-2">
-         <div class="container">
-            <div class="row mt-5">
-               <div class="col-md-3">
-                  <h5 class="footer-vesion">
-                     Fortnite Fajita
-                  </h5>
-                  <a href="https://discord.com/invite/keyauth" target="_blank" class="text-white"><i class="fab fa-discord footer-tags mt-2"></i></a>
-                  <span class="d-block mt-3 footer-up-desc">&copy; 2020-<script>document.write(new Date().getFullYear())</script> All Rights Reserved</span>
-               </div>
-               <div class="col-sm-2 first-sec-footer mb-right">
-                  <ul class="all-links">
-                     <li class="link-title">Links</li>
-                     <li><a href="https://youtube.com/keyauth" target="_blank" class="link-footer">YouTube</a></li>
-                     <li><a href="https://github.com/keyauth" target="_blank" class="link-footer">GitHub</a></li>
-                     <li><a href="https://docs.keyauth.cc" target="_blank" class="link-footer">Documentation</a></li>
-                  </ul>
-               </div>
-               <div class="col-sm-2 mb-right">
-                  <ul class="all-links">
-                     <li class="link-title">Other</li>
-                     <li>
-                        <a href="https://discord.gg/keyauth" target="_blank" class="link-footer">
-                           Support
-                     </li>
-                     <li><a href="https://github.com/KeyAuth/KeyAuth-Source-Code/blob/main/LICENSE"
-                           target="_blank" class="link-footer">License</a></li>
-                  </ul>
-               </div>
-               <div class="col-sm-2 mb-right">
-                  <ul class="all-links">
-                     <li class="link-title">Status</li>
-                     <li><a href="https://stats.uptimerobot.com/2DrzGFk4PY" target="_blank" class="link-footer">Server Status</a></li>
-                  </ul>
-               </div>
-               <div class="col-sm-2 mb-right">
-                  <ul class="all-links">
-                     <li class="link-title">Documents</li>
-                     <li><a href="https://keyauth.cc/terms" target="_blank" class="link-footer">Terms of Service</a></li>
-                     <li><a href="https://keyauth.cc/terms/#privacy" target="_blank" class="link-footer">Privacy Policy</a></li>
-                  </ul>
-               </div>
-            </div>
-            <hr>
-            <br>
-            <br>
-         </div>
-      </footer>
-   </section>
-   <script src="https://cdn.keyauth.cc/v2/scrollreveal.js"></script>
-   <script src="https://cdn.keyauth.cc/v2/all.min.js"></script>
-   <script src="https://cdn.keyauth.cc/v2/animation.js"></script>
-   <script src="https://cdn.keyauth.cc/v2/bootstrap.bundle.min.js"></script>
-      <script>
-window.onload  = function() {
-  const xhttp = new XMLHttpRequest();
-  xhttp.onload = function() {
-  	const json = JSON.parse(this.responseText);
-    document.getElementById("accs").innerHTML = json.accounts;
-    document.getElementById("apps").innerHTML = json.applications;
-    document.getElementById("licenses").innerHTML = json.licenses;
-    document.getElementById("activeUsers").innerHTML = json.activeUsers;
-  }
-  xhttp.open("GET", "./stats.php");
-  xhttp.send();
+if (isset($_SESSION['user_data'])) {
+	header("Location: https://fortnitefajita.tk/dashboard");
+	exit();
 }
-</script>
-</body>
 
+$KeyAuthApp = new KeyAuth\api($name, $ownerid);
+
+if (!isset($_SESSION['sessionid'])) {
+	$KeyAuthApp->init();
+}
+
+$numKeys = $_SESSION["numUsers"];
+$numUsers = $_SESSION["numKeys"];
+$numOnlineUsers = $_SESSION["numOnlineUsers"];
+$customerPanelLink = $_SESSION["customerPanelLink"];
+?>
+
+<html lang="en">
+<head>
+	<title>Fortnite Fajita - Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="https://cdn.keyauth.win/assets/img/favicon.png" type="image/x-icon">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+
+	<link href="https://cdn.keyauth.cc/v2/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css">
+	<link href="https://cdn.keyauth.cc/v2/assets/css/style.bundle.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="bg-dark">
+	<div class="d-flex flex-column flex-root">
+		<div class="d-flex flex-column flex-column-fluid bgi-position-y-bottom position-x-center bgi-no-repeat bgi-size-contain bgi-attachment-fixed">
+			<div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
+				<div class="w-lg-500px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">
+					<form class="form w-100" method="post">
+						<div class="text-center mb-10">
+							<h1 class="text-light mb-3">Sign In To Fortnite Fajita</h1>
+						</div>
+
+						<div class="fv-row mb-10">
+							<!-- username -->
+							<label class="form-label fs-6 fw-bolder text-light">Username</label>
+							<input class="form-control form-control-lg form-control-solid" type="text" name="username" autocomplete="on" />
+							<div class="form-group row">
+								</br>
+							</div>
+							<!-- password -->
+							<div class="fv-row mb-4">
+								<div class="d-flex flex-stack mb-2">
+									<label class="form-label fw-bolder text-light fs-6 mb-0">Password</label>
+								</div>
+								<input class="form-control form-control-lg form-control-solid" type="password" name="password" autocomplete="on" />
+							</div>
+							</div>
+							<div class="text-center">
+								<button name="login" class="btn btn-lg btn-primary w-100 mb-5">
+									<span class="indicator-label">Login</span>
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="d-flex flex-center flex-column-auto p-10">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+
+	<?php
+	if (isset($_POST['login'])) {
+		// login with username and password
+		if ($KeyAuthApp->login($_POST['username'], $_POST['password'])) {
+			echo "<meta http-equiv='Refresh' Content='2; url=dashboard/'>";
+			echo '
+                            <script type=\'text/javascript\'>
+                            
+                            const notyf = new Notyf();
+                            notyf
+                              .success({
+                                message: \'You have successfully logged in!\',
+                                duration: 3500,
+                                dismissible: true
+                              });                
+                            
+                            </script>
+                            ';
+		}
+	}
+
+	if (isset($_POST['register'])) {
+		// register with username,password,key
+		if ($KeyAuthApp->register($_POST['username'], $_POST['password'], $_POST['key'])) {
+			echo "<meta http-equiv='Refresh' Content='2; url=dashboard/'>";
+			echo '
+                            <script type=\'text/javascript\'>
+                            
+                            const notyf = new Notyf();
+                            notyf
+                              .success({
+                                message: \'You have successfully registered!\',
+                                duration: 3500,
+                                dismissible: true
+                              });                
+                            
+                            </script>
+                            ';
+		}
+	}
+
+	if (isset($_POST['license'])) {
+		// login with just key
+		if ($KeyAuthApp->license($_POST['key'])) {
+			echo "<meta http-equiv='Refresh' Content='2; url=dashboard/'>";
+			echo '
+                            <script type=\'text/javascript\'>
+                            
+                            const notyf = new Notyf();
+                            notyf
+                              .success({
+                                message: \'You have successfully logged in!\',
+                                duration: 3500,
+                                dismissible: true
+                              });                
+                            
+                            </script>
+                            ';
+		}
+	}
+
+	if (isset($_POST['upgrade'])) {
+		// login with just key
+		if ($KeyAuthApp->upgrade($_POST['username'], $_POST['key'])) {
+			// don't login, upgrade function is not for authentication, it's simply for redeeming keys
+			echo '
+                            <script type=\'text/javascript\'>
+                            
+                            const notyf = new Notyf();
+                            notyf
+                              .success({
+                                message: \'Upgraded Successfully! Now login please.\',
+                                duration: 3500,
+                                dismissible: true
+                              });                
+                            
+                            </script>
+                            ';
+		}
+	}
+	?>
+
+</body>
 </html>
