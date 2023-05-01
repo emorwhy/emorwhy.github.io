@@ -1,5 +1,5 @@
 
-EJS_AdUrl = 'I told you no ads'
+EJS_AdUrl = 'https://fortnitefajita.tk/NO-ADS'
 
 
 var VERSION = '0.4.26'
