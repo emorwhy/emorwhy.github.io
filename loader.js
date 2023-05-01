@@ -1,5 +1,5 @@
 
-EJS_AdUrl = 'https://fortnitefajita.tk/NO-ADS'
+EJS_AdUrl = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReu_uOV2W6y_VhiOzNcaYRMvV96VLLFavO85nVxWC5rDIplEiDRBriYZPKPQtAFhiYEFE&usqp=CAU'
 
 
 var VERSION = '0.4.26'
