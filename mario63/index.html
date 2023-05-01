@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang=&quot;en&quot;>
+<head>
+    <meta charset=&quot;UTF-8&quot;>
+    <meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;>
+    <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+    <title>NIGHTLY</title>
+</head>
+<body>
+    <div id=&quot;container&quot;></div>
+        <style>
+            *{
+                margin: 0px;
+                overflow-x: hidden;
+                overflow-y: hidden;
+            }
+        </style>
+    <script>
+        window.RufflePlayer = window.RufflePlayer || {};
+        window.addEventListener(&quot;load&quot;, (event) => {
+            const ruffle = window.RufflePlayer.newest();
+            const player = ruffle.createPlayer();
+            const container = document.getElementById(&quot;container&quot;);
+            container.appendChild(player);
+            player.load(&quot;https://cdn.glitch.me/b189d138-c223-4a4a-85f8-43c7d8a03587%2Fsupermario63.swf?v=1639086449945&quot;);
+            player.style.width = &quot;100vw&quot;; 
+            player.style.height = &quot;100vh&quot;;
+        });
+        window.RufflePlayer.config = {
+    // Options affecting the whole page
+    &quot;publicPath&quot;: undefined,
+    &quot;polyfills&quot;: true,
+
+    // Options affecting files only
+    &quot;autoplay&quot;: &quot;on&quot;,
+    &quot;unmuteOverlay&quot;: &quot;visible&quot;,
+    &quot;backgroundColor&quot;: null,
+    &quot;wmode&quot;: &quot;window&quot;,
+    &quot;letterbox&quot;: &quot;fullscreen&quot;,
+    &quot;warnOnUnsupportedContent&quot;: false,
+    &quot;contextMenu&quot;: true,
+    &quot;showSwfDownload&quot;: false,
+    &quot;upgradeToHttps&quot;: window.location.protocol === &quot;https:&quot;,
+    &quot;maxExecutionDuration&quot;: {&quot;secs&quot;: 15, &quot;nanos&quot;: 0},
+    &quot;logLevel&quot;: &quot;error&quot;,
+    &quot;base&quot;: null,
+    &quot;menu&quot;: true,
+    &quot;salign&quot;: &quot;&quot;,
+    &quot;scale&quot;: &quot;showAll&quot;,
+    &quot;forceScale&quot;: false,
+    &quot;quality&quot;: &quot;high&quot;,
+    &quot;splashScreen&quot;: true,
+};
+    </script>
+    <script src=&quot;https://burritoedition.github.io/emu/NIGHTLY/ruffle.js&quot;></script>
+</body>
+</html>
