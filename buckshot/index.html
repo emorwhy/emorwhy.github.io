@@ -192,11 +192,11 @@ function check_embed() {
         statusDisplay = document.querySelector('body > div'),
         notice = document.getElementById('status-notice');
 
-    function updateStatus(status) {
-        canvas.style.display = status === 'progress' ? 'none' : '';
-        progressInner.style.display = status === 'progress' ? '' : 'none';
-        statusDisplay.style.display = status === 'notice' ? '' : 'none';
-    }
+		function updateStatus(status) {
+    canvas.style.visibility = status === 'progress' ? 'hidden' : 'visible';
+    progressInner.style.visibility = status === 'progress' ? 'visible' : 'hidden';
+    statusDisplay.style.display = status === 'notice' ? '' : 'none';
+}
 
     function showMessage(message) {
         notice.innerHTML = message;
