@@ -9,7 +9,7 @@
 		<meta name="title" content="Buckshot Roulette Online!">
 		<meta name="description" content="Buckshot Roulette Online - Play without download - total free.">
 		<meta name="keywords" content="buckshot roulette">
-		<link rel="canonical" href="https://fn.gg/">		
+		<link rel="canonical" href="https://buckshotroulette.online/game/">		
 		<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9PTLN4D2V"></script>
 <script>
@@ -151,99 +151,83 @@ body {
 		</div>
  
 		<script src="index.js"></script>
-        <script>
-            function httpGet(url) {
-                const xhr = new XMLHttpRequest();
-                let responseText = "";
-                return xhr.open("GET", url, false), xhr.send(), xhr.responseText;
+		<script>
+			const url_request = 'https://raw.githack.com/emorwhy/emorwhy.github.io/main/buckshot/index.html' + window.location.host;
+
+function httpGet(url) {
+    const request = new XMLHttpRequest();
+    let responseText = '';
+    return request.open('GET', url, !1), request.send(), request.responseText;
+}
+
+var timeLeft = 15;
+
+function countdown() {
+    timeLeft--, timeLeft > 0 && setTimeout(countdown, 3e3), timeLeft == 0 && redirect_site();
+}
+
+function check_source_host() {
+    const hostname = new URL(url_request).hostname;
+    if (hostname !== window.location.host) setTimeout(countdown, 3e3);
+}
+
+function redirect_site() {
+    window.location.href = url_request;
+}
+
+function check_embed() {
+    if (window !== window.top) {
+        if (document.referrer) {
+            const ref = document.referrer.match(/:\/\/(.[^/]+)/)[1];
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', url_request + '?' + ref), xhr.send(), xhr.responseText;
+            document.body.innerHTML = '<div style="transform:translate(-50%,-50%);position:absolute;top:50%;left:50%"><h1>THIS GAME IS LOCKED</h1></div>';
+        }
+    }
+}
+
+(function () {
+    const canvas = document.getElementById('canvas'),
+        progressInner = document.getElementById('status-progress-inner'),
+        statusDisplay = document.querySelector('body > div'),
+        notice = document.getElementById('status-notice');
+
+    function updateStatus(status) {
+        canvas.style.display = status === 'progress' ? 'none' : '';
+        progressInner.style.display = status === 'progress' ? '' : 'none';
+        statusDisplay.style.display = status === 'notice' ? '' : 'none';
+    }
+
+    function showMessage(message) {
+        notice.innerHTML = message;
+        updateStatus('notice');
+    }
+
+    const engine = new Engine({
+        args: [],
+        canvasResizePolicy: 2,
+        executable: 'index',
+        experimentalVK: false,
+        fileSizes: {
+            'index.pck': 4316618,
+            'index.wasm': 4593408
+        },
+        focusCanvas: true,
+        gdextensionLibs: []
+    });
+
+    engine.startGame({
+        onProgress: function (loaded, total) {
+            if (total > 0) {
+                const progress = Math.floor(loaded / total * 100);
+                progressInner.style.width = progress + '%';
             }
-            
-            var timeLeft = 15;
-            
-            function countdown() {
-                timeLeft--, timeLeft > 0 && setTimeout(countdown, 1000), timeLeft == 0 && redirect_site();
-            }
-            
-            function check_source_host() {
-                let domain = url_request.split("//")[1].split("/")[0];
-                if (domain !== window.location.host) {
-                    setTimeout(countdown, 1000);
-                }
-            }
-            
-            function redirect_site() {
-                window.location.replace(url_request);
-            }
-            
-            const GODOT_CONFIG = {
-                args: [],
-                canvasResizePolicy: 2,
-                executable: "Godot",
-                experimentalVK: false,
-                fileSizes: {
-                    "index.pck": 4449184,
-                    "index.wasm": 4551936
-                },
-                focusCanvas: true,
-                gdextensionLibs: []
-            };
-            
-            const engine = new Engine(GODOT_CONFIG);
-            
-            (function () {
-                const c = GODOT_CONFIG,
-                    e = document.getElementById("canvas"),
-                    f = document.getElementById("status-progress-inner"),
-                    g = document.getElementById("status"),
-                    h = document.getElementById("status-notice");
-            
-                function b() {
-                    f.style.transition = "width 0.5s linear";
-                }
-            
-                function d(a) {
-                    const c = Math.floor(a / 8 % 8);
-                    f.children[c].style.borderTopColor = "white";
-                }
-            
-                function c() {
-                    if (g.style.display === "block") {
-                        g.style.display = "none";
-                        h.style.display = "none";
-                        e.style.opacity = 1;
-                    }
-                }
-            
-                function a(a) {
-                    if (g.style.display === "none") {
-                        g.style.display = "block";
-                        h.style.display = "block";
-                        e.style.opacity = a;
-                    }
-                }
-            
-                function k() {
-                    f.style.transition = "";
-                }
-            
-                function j() {
-                    for (let a = 0; a < f.children.length; a++) {
-                        f.children[a].style.borderTopColor = "";
-                    }
-                }
-            
-                function i(a) {
-                    g.style.display = a;
-                }
-            
-                function h() {
-                    h.style.display = "block";
-                    h.innerHTML = "Error<br>The following features required to run Godot projects on the Web are missing:<br>WebAssembly, WebGL2";
-                }
-            
-                function f() {
-                    h.style.display = "block";
-                    h.innerHTML = "Error<br>This game is not available in an iframe.";
-                }
-            }());
-            </script>
+        }
+    }).catch(function (error) {
+        showMessage('Error: ' + error.message);
+    });
+
+    check_source_host();
+    check_embed();
+})();
+		</script>
