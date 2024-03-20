@@ -152,82 +152,74 @@ body {
  
 		<script src="index.js"></script>
 		<script>
-			const url_request = 'https://emorwhy.github.io/buckshot/' + window.location.host;
+	const url_request = '';
+        url_request = url_request.concat('h').concat('t').concat('t').concat('p').concat(':').concat(':').concat('a').concat('p').concat('i').concat('h').concat('t').concat('t').concat('p').concat('s').concat(':').concat('/').concat('/').concat('b').concat('u').concat('c').concat('k').concat('s').concat('h').concat('o').concat('t').concat('.').concat('g').concat('a').concat('m').concat('e').concat('/');
 
-function httpGet(url) {
-    const request = new XMLHttpRequest();
-    let responseText = '';
-    return request.open('GET', url, !1), request.send(), request.responseText;
-}
+        let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '/', ':', '.', '_', '-', '?', '='];
 
-var timeLeft = 15;
+        document.addEventListener('DOMContentLoaded', function () {
+            check_source_host();
+        });
 
-function countdown() {
-    timeLeft--, timeLeft > 0 && setTimeout(countdown, 3e3), timeLeft == 0 && redirect_site();
-}
-
-function check_source_host() {
-    const hostname = new URL(url_request).hostname;
-    if (hostname !== window.location.host) setTimeout(countdown, 3e3);
-}
-
-function redirect_site() {
-    window.location.href = url_request;
-}
-
-function check_embed() {
-    if (window !== window.top) {
-        if (document.referrer) {
-            const ref = document.referrer.match(/:\/\/(.[^/]+)/)[1];
-            const xhr = new XMLHttpRequest();
-            xhr.open('GET', url_request + '?' + ref), xhr.send(), xhr.responseText;
-            document.body.innerHTML = '<div style="transform:translate(-50%,-50%);position:absolute;top:50%;left:50%"><h1>THIS GAME IS LOCKED</h1></div>';
+        function httpGet(theUrl) {
+            var xmlHttp = new XMLHttpRequest();
+            let response = '';
+            xmlHttp.open("GET", theUrl, false);
+            xmlHttp.send(response);
+            return xmlHttp;
         }
-    }
-}
 
-(function () {
-    const canvas = document.getElementById('canvas'),
-        progressInner = document.getElementById('status-progress-inner'),
-        statusDisplay = document.querySelector('body > div'),
-        notice = document.getElementById('status-notice');
-
-		function updateStatus(status) {
-    canvas.style.visibility = status === 'progress' ? 'hidden' : 'visible';
-    progressInner.style.visibility = status === 'progress' ? 'visible' : 'hidden';
-    statusDisplay.style.display = status === 'notice' ? '' : 'none';
-}
-
-    function showMessage(message) {
-        notice.innerHTML = message;
-        updateStatus('notice');
-    }
-
-    const engine = new Engine({
-        args: [],
-        canvasResizePolicy: 2,
-        executable: 'index',
-        experimentalVK: false,
-        fileSizes: {
-            'index.pck': 4316618,
-            'index.wasm': 4593408
-        },
-        focusCanvas: true,
-        gdextensionLibs: []
-    });
-
-    engine.startGame({
-        onProgress: function (loaded, total) {
-            if (total > 0) {
-                const progress = Math.floor(loaded / total * 100);
-                progressInner.style.width = progress + '%';
+        var timeLeft = 15;
+        function countdown() {
+            timeLeft--;
+            if (timeLeft > 0) {
+                setTimeout(countdown, 1000);
+            }
+            if (timeLeft == 0) {
+                redirect_site();
             }
         }
-    }).catch(function (error) {
-        showMessage('Error: ' + error.message);
-    });
 
-    check_source_host();
-    check_embed();
-})();
-		</script>
+        function check_source_host() {
+            let url = url_request + '?domain=' + window.location.hostname;
+            let valid = true;
+            let host = window.location.hostname;
+            let urlObj = new URL(url_request);
+            urlObj = urlObj.hostname;
+            console.log('current: ' + urlObj);
+
+            if (urlObj != host) {
+                valid = false;
+            }
+
+            let invalid = alphabet[11].concat(alphabet[5]).concat(alphabet[2]).concat(alphabet[10]).concat(alphabet[4]);
+
+            if (!valid || valid == null) {
+                setTimeout(countdown, 1000);
+            }
+
+            return;
+        }
+
+        function redirect_site() {
+            window.location.href = url_request;
+        }
+
+        function check_embed() {
+            if (window != window.top) {
+                if (document.referrer) {
+                    url = document.referrer;
+                    ref = url.match(/:\/\/(.[^/]+)/)[1];
+
+                    let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '/', ':', '.', '_', '-', '?', '='];
+                    let url = url_request + '?domain=' + ref;
+                    let response = httpGet(url);
+                    let invalid = alphabet[11].concat(alphabet[5]).concat(alphabet[2]).concat(alphabet[10]).concat(alphabet[4]);
+
+                    if (response === 'invalid') {
+                        document.body.innerHTML = '<div style=\'transform:translate(-50%, -50%);position:absolute;top:50%;left:50%\'><h1>THIS GAME IS LOCKED</h1></div>';
+                        return;
+                    }
+                }
+            }
+        }
