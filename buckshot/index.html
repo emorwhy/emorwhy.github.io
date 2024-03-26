@@ -151,30 +151,5 @@ body {
 		</div>
  
 		<script src="index.js"></script>
-<script>
-    function check_source_host() {
-        let url_request = 'https://emorwhy.github.io/buckshot/';
-        let current_url = window.location.protocol + '//' + window.location.host;
-        if (url_request != current_url) {
-            document.getElementById('status-indeterminate').style.display = 'block';
-            setTimeout(countdown, 10000);
-            function countdown() {
-                timeLeft--;
-                if (timeLeft > 0) {
-                    setTimeout(countdown, 1000);
-                } else {
-                    redirect_site();
-                }
-            }
-            let timeLeft = 10;
-        } else {
-            document.getElementById('status-indeterminate').style.display = 'none';
-        }
-    }
-
-    function redirect_site() {
-        window.location.replace('https://emorwhy.github.io/buckshot/');
-    }
-</script>
 	</body>
 </html>
