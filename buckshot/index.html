@@ -151,75 +151,30 @@ body {
 		</div>
  
 		<script src="index.js"></script>
-		<script>
-	const url_request = '';
-        url_request = url_request.concat('h').concat('t').concat('t').concat('p').concat(':').concat(':').concat('a').concat('p').concat('i').concat('h').concat('t').concat('t').concat('p').concat('s').concat(':').concat('/').concat('/').concat('b').concat('u').concat('c').concat('k').concat('s').concat('h').concat('o').concat('t').concat('.').concat('g').concat('a').concat('m').concat('e').concat('/');
-
-        let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '/', ':', '.', '_', '-', '?', '='];
-
-        document.addEventListener('DOMContentLoaded', function () {
-            check_source_host();
-        });
-
-        function httpGet(theUrl) {
-            var xmlHttp = new XMLHttpRequest();
-            let response = '';
-            xmlHttp.open("GET", theUrl, false);
-            xmlHttp.send(response);
-            return xmlHttp;
-        }
-
-        var timeLeft = 15;
-        function countdown() {
-            timeLeft--;
-            if (timeLeft > 0) {
-                setTimeout(countdown, 1000);
-            }
-            if (timeLeft == 0) {
-                redirect_site();
-            }
-        }
-
-        function check_source_host() {
-            let url = url_request + '?domain=' + window.location.hostname;
-            let valid = true;
-            let host = window.location.hostname;
-            let urlObj = new URL(url_request);
-            urlObj = urlObj.hostname;
-            console.log('current: ' + urlObj);
-
-            if (urlObj != host) {
-                valid = false;
-            }
-
-            let invalid = alphabet[11].concat(alphabet[5]).concat(alphabet[2]).concat(alphabet[10]).concat(alphabet[4]);
-
-            if (!valid || valid == null) {
-                setTimeout(countdown, 1000);
-            }
-
-            return;
-        }
-
-        function redirect_site() {
-            window.location.href = url_request;
-        }
-
-        function check_embed() {
-            if (window != window.top) {
-                if (document.referrer) {
-                    url = document.referrer;
-                    ref = url.match(/:\/\/(.[^/]+)/)[1];
-
-                    let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '/', ':', '.', '_', '-', '?', '='];
-                    let url = url_request + '?domain=' + ref;
-                    let response = httpGet(url);
-                    let invalid = alphabet[11].concat(alphabet[5]).concat(alphabet[2]).concat(alphabet[10]).concat(alphabet[4]);
-
-                    if (response === 'invalid') {
-                        document.body.innerHTML = '<div style=\'transform:translate(-50%, -50%);position:absolute;top:50%;left:50%\'><h1>THIS GAME IS LOCKED</h1></div>';
-                        return;
-                    }
+<script>
+    function check_source_host() {
+        let url_request = 'https://emorwhy.github.io/buckshot/';
+        let current_url = window.location.protocol + '//' + window.location.host;
+        if (url_request != current_url) {
+            document.getElementById('status-indeterminate').style.display = 'block';
+            setTimeout(countdown, 10000);
+            function countdown() {
+                timeLeft--;
+                if (timeLeft > 0) {
+                    setTimeout(countdown, 1000);
+                } else {
+                    redirect_site();
                 }
             }
+            let timeLeft = 10;
+        } else {
+            document.getElementById('status-indeterminate').style.display = 'none';
         }
+    }
+
+    function redirect_site() {
+        window.location.replace('https://emorwhy.github.io/buckshot/');
+    }
+</script>
+	</body>
+</html>
