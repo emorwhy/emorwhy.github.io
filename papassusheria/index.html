@@ -1,11 +1,48 @@
-<!DOCTYPE html><html> <head> <script src="../gameframe/ruffle/2024-04-02/ruffle.js"></script><body style="margin: 0px"><div id="container" style="width: 100vw; height: 100vh;"></div><script type="text/javascript">function play() {
-    const ruffle = window.RufflePlayer.newest();
-    const player = ruffle.createPlayer();
-    player.config = {"contextMenu":"off","autoplay":true,"warnOnUnsupportedContent":false,"allowScriptAccess":true,"maxExecutionDuration":30}
-    const container = document.getElementById('container');
-    container.appendChild(player);
-    player.style.cssText = 'width:100%; height: 100%;';
-    player.style.display = 'block';
-    player.load("./papassusheria.swf");
-}
-play();</script></body></head></html>
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset='utf8'>
+        <style>
+            body, html {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+            #ruffle {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id='ruffle'></div>
+        <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+        <script>
+            var swfobject = {};
+
+            swfobject.embedSWF = function(url, cont, width, height){
+                var ruffle = window.RufflePlayer.newest(),
+                    player = Object.assign(document.getElementById(cont).appendChild(ruffle.createPlayer()), {
+                        width: width,
+                        height: height,
+                        style: 'width: ' + width + 'px; height: ' + height + 'px',
+                    });
+
+                player.load({ url: url });
+
+                window.addEventListener('resize', function() {
+                    var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+                    var screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+                    player.width = screenWidth;
+                    player.height = screenHeight;
+                    player.style = 'width: ' + screenWidth + 'px; height: ' + screenHeight + 'px';
+                });
+            }
+
+            swfobject.embedSWF('papassusheria.swf', 'ruffle', '100%', '100%');
+        </script>
+    </body>
+</html>
